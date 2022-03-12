@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package user.v1;
+
+service UserService {
+    rpc GetUser(UidReq) returns(UserRes);
+    rpc GetUserAll(NameReq) returns(UserAllRes);
+}
+
+message UidReq {
+   int64 id = 1;
+
+   enum Type {
+      HY_Z = 0;
+      HY_A = 1;
+      HY_B = 2;
+      HY_C = 3;
+   }
+
+   Type type = 3;
+}
+
+message NameReq {
+   string name = 2;
+}
+
+message UserRes {
+   int64 id = 1;
+   string name = 2;
+}
+
+message UserAllRes {
+   oneof user_oneof{
+      int64 id = 1;
+      UserRes data = 3;
+   }
+}
+

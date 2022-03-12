@@ -1,37 +1,20 @@
-# grpc_for_windows
-
-#### 介绍
-这是一个grpc+protobuf的windows版本
-
-#### 软件架构
-软件架构说明
+# 这是一个grpc+protobuf的windows版本
+项目使用 [vcpkg](https://github.com/microsoft/vcpkg)编译，仅供大家测试使用，请勿用于正式环境
 
 
-#### 安装教程
+朋友需要在windows下进行php+grpc的相关开发，然后发现官方的grpc未提供windows下的php plugin的exe文件，故建立此项目，希望能够帮助更多的以windows为开发环境的开发者。 
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+# 版本日志
+- 2020.1.14 grpc 1.26,protoc 3.11.2
+- 2020.6.12 grpc 1.28.1 protoc 3.12.0
 
-#### 使用说明
+# 使用方法
+### 生成php文件的参考命令
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+`protoc.exe --proto_path=. --php_out=. --grpc_out=. --plugin=protoc-gen-grpc=grpc_php_plugin.exe helloworld.proto`
 
-#### 参与贡献
+参考[protocbuf使用](https://developers.google.com/protocol-buffers/docs/proto3#generating)
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+可以把exe的目录添加到系统的path变量下
+    
+     

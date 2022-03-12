@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package xds.v1.user;
+
+service UserService {
+    rpc GetUser(UidRequest) returns(UserResponse);
+}
+
+message UidRequest {
+   int64 id = 1;
+
+   enum Type {
+      HY_Z = 0;
+      HY_A = 1;
+      HY_B = 2;
+      HY_C = 3;
+   }
+
+   Type type = 3;
+}
+
+message UserResponse {
+   int64 id = 1;
+   string name = 2;
+}
